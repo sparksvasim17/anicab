@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import img from '../../assest/2104039.jpg'
 import img1 from '../../assest/pexels-frans-van-heerden-830829 (1).jpg'
 import img2 from '../../assest/pexels-jess-loiterton-4327782.jpg'
@@ -6,28 +6,23 @@ import logo from '../../assest/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Venderpostdata from './vender/Venderpostdata'
 import Path from './Path'
-import { useNavigate } from 'react-router-dom'
+import vendorImg from '../../assest/vendor_background.png'
+import { useTheme } from '../../context/Theme'
+
+
 
 
 const HomeFeatures = () => {
-     const navigate = useNavigate();
 
-     const navigateRide = (e) => {
-      e.preventDefault();
-      navigate('/allrides')
-      }
+  const [theme,setTheme] = useTheme()
 
- 
   return (
     <>
       <div className='max-w-[10000px] mx-auto'>
-        <div className='w-full bg-cover lg:py-40 lg:px-40' style={{ backgroundImage: `url(${img})` }}>
+        <div className='w-full bg-cover lg:py-40 lg:px-40' style={{ backgroundImage: theme ? `url(${vendorImg})`: `url(${img})` }}>
           <p className='text-5xl my-5 text-center hover:text-white '>Annie Cabs</p>
           <p className='text-2xl my-5 text-center hover:text-white '>Reliable and Secure Way to Reach Any Point of the City</p>
           <p className='text-2xl my-5 text-center hover:text-white '>We provide affordable and fast way to find a taxi when and where you need it.</p>
-          <div className='max-w-[1000px] mt-5 lg:ml-6 text-center'>
-              <button onClick={navigateRide} className='bg-red-500 w-40 p-2 hover:text-black hover:bg-orange-300 text-white rounded'>Show All Trips</button>
-            </div>
         </div>
       </div>
 
@@ -82,9 +77,9 @@ const HomeFeatures = () => {
           </div>
         </div>
       </section>
-
-     <Path/>
-      <Venderpostdata/>
+{theme ? <Venderpostdata/> :
+     <Path/>}
+      
 
       <section className="text-gray-600 mt-20 body-font">
         <div className="container px-5  mx-auto">

@@ -10,7 +10,6 @@ import Signup from './components/pages/Signup';
 import Sidebar from './components/Layout/vender/Sidebar';
 import VenderSignup from './components/Features/vender/VenderSignup';
 import VenderLogin from './components/Features/vender/VenderLogin';
-import Allrides from './components/Features/Allrides';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
     <Route path='/signup' element= {<Signup/>}></Route>
     <Route path='/dashboard' element={<Sidebar />}></Route> 
 
-    <Route path='/allrides' element={<Allrides/>}/>
     <Route path='/vendersignup' element={<VenderSignup/>}/>
     <Route path='/venderlogin' element={<VenderLogin/>}/>
    </Routes>

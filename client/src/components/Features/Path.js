@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import img from '../../assest/2104039.jpg'
 import { useMatchMutation } from '../../store/services/api';
-import { useNavigate } from 'react-router-dom';
 
 const Path = () => {
     const[from , setFrom]= useState('');
     const[to,setTo] = useState('');
     const[responseInfo , response] = useMatchMutation('');
-    const navigate = useNavigate();
 
     const tripHandle = async(e)=>{
         e.preventDefault();
@@ -16,8 +14,6 @@ const Path = () => {
     
         if(from && to){
           await responseInfo(ab)
-          navigate('/allrides')
-          
         }else{
           console.warn("fill the from")
         }

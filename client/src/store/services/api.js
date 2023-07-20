@@ -46,15 +46,6 @@ export const Api = createApi({
                 }
             })
         }),
-        allrides: builder.query({
-            query: () => ({
-                url: 'root/allrides',
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }               
-            })
-        }),
     })
 })
 
@@ -62,6 +53,5 @@ export const {
     usePostFormMutation,
     useLoginMutation,
     useContactMutation,
-    useMatchMutation,
-    useAllridesQuery
+    useMatchMutation
 } = Api

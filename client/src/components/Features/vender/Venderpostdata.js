@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import img from '../../../assest/2104039.jpg'
+// import img from '../../../assest/2104039.jpg'
+import img2 from '../../../assest/vendor_background.png'
 import { usePostdataMutation } from '../../../store/services/vender';
+import { useTheme } from '../../../context/Theme';
+
 
 const Venderpostdata = () => {
 
@@ -9,6 +12,7 @@ const Venderpostdata = () => {
   const[date , setDate]= useState('');
   const[time , setTime]= useState('');
   const[responseInfo , response] = usePostdataMutation()
+  const [theme, setTheme] = useTheme();
 
   const tripHandle = async(e)=>{
     e.preventDefault();
@@ -30,7 +34,7 @@ const Venderpostdata = () => {
 
 
   return (
-    <div className='max-w-[1000px]  m-0 bg-no-repeat grid grid-cols-2 lg:ml-[130px] lg:py-40 lg:px-10' style={{ backgroundImage: `url(${img})` }}>
+    <div className='max-w-[1000px]  m-0 bg-no-repeat grid grid-cols-2 lg:ml-[130px] lg:py-40 lg:px-10' style={{ backgroundImage: `url(${img2})` }}>
     <section className="text-gray-600 body-font">
           <div className="container px-5 py-24 mx-auto">
 

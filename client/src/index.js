@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import { ThemeProvider } from './context/Theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
+  <ThemeProvider>
   <BrowserRouter>
   <Provider store= {store}>
     <App />
   </Provider>
   </BrowserRouter>
+  </ThemeProvider>
 
   // <React.StrictMode>
   //   <App />
